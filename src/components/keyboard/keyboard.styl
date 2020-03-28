@@ -1,0 +1,90 @@
+@import "./animate.styl";
+
+.keyboard {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  padding-top: 12px;
+  height: 228.5px;
+  display: flex;
+  justify-content: center;
+  flex-grow: 4;
+  flex-flow: row wrap; /* 换行 */
+  background: #dadada;
+  box-sizing: border-box;
+}
+
+.keyboard > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4.5px;
+  flex: 0 0 32.5px;
+  width: 32.5px;
+  height: 43px;
+  font-size: 20px;
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .2);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.keyboard > span:nth-child(10n+1) {
+  margin-left: 0;
+}
+
+.keyboard > span:active {
+  box-shadow: none;
+  background: #dadada;
+}
+
+.keyboard > span.empty,
+.keyboard > span.half {
+  background: rgba(0, 0, 0, 0);
+  box-shadow: none;
+}
+
+.keyboard > span.last {
+  flex: 0 0 16px !important;
+  width: 16px !important;
+}
+
+.keyboard > span.half {
+  flex: 0 0 18.5px;
+  width: 18.5px;
+}
+
+.keyboard > span.del {
+  width: 46.5px;
+  flex: 0 0 46.5px;
+}
+
+.keyboard > span.del::before {
+  content: '';
+  display: inline-block;
+  width: 26.5px;
+  height: 21px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACkElEQVRoQ+2Y/XHUMBDFXyoAOoAKQglQAVBBSAWBCggVQAdABSQVJFSQpIOUABXA/G60N4vGPq1k2ZebWDP3z1nafW+f9sM+0oGvowPHr5XAvhVcFVgVmBiBR32F3ko6kfR0YhAjx+8lXUv6kW9uVeC9pG8Rz533/Jb0LpHZmG4h8FLSTQL2UdJtZ5Bj5lCcwP2V9Nr81hIA/FW6NsiJwSXX8wScAEKiSgEOc5A7vw/wFqhzSZ8kvZB0H1UA0EQeBX5JerVk2DNf+AYLClxHCHjwdwk8ybSvZQQ+SzqPEIAthx4CeIJWRYBSSaL+SdeHerzvFSbgwXNoqXJZClCIgDUqIt8KnoQnCKh2Kmkob74k+9znixLy9LxIwHdZHH8PGs63Wbnjf9SjangSpjDPayrbTgJ0u58JyRTwmEAB5pcnyZ4n4cHzmPFgsgK+yzIifG2MvD82RAIivoPXBmpQgTlHhJyEJ1gLfrSMIt8bSZeSuEa9lx8AzXaryoMKWMKRZNtJryOL/M6PJXbE5WgSmwqQYFDqNS7k4CnNQ4kdAb+zEzPzUDWOR8pe1IHfl4PnzpPEY9Up4mNnGe1J4oMkGpUtn7B5YteM58VGBgm6JzLTxHDcsjyBoWrjSXQlkDehKSSo91yZsTmKlyQiSv5Fc66ogEXbR2gze7fIMMOZMAF895qLevKoIvAQSVQTgMTcja5GISOw6eSRV0ozTjLzJW6ubh0lYRNz+KXeG/YkenbrKHj2GYZnBLNGAQ73bHQ1oG3vWRrzt32jlkBOgoa31Iu+fYv67+tIC4GcREskW84wBPKSxW/b9FoJGAma3RJrVOkpBJYAXvSxEiiGaOYNqwIzB7hoflWgGKKZNxy8Av8A79K6MW7mkh0AAAAASUVORK5CYII=") no-repeat center;
+  -webkit-background-size: cover;
+  background-size: contain;
+}
+
+.keyboard > span.disabled {
+  color: #666;
+  box-shadow: none;
+  background: #EEEEEE;
+}
+
+.keyboard > span.disabled:active {
+  background: #EEEEEE;
+}
+
+.keyboard > span.ok {
+  flex: 0 0 69.5px !important;
+  width: 69.5px !important;
+}

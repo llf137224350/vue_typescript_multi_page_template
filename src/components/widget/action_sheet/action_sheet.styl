@@ -1,0 +1,131 @@
+@-webkit-keyframes fadeIn
+  from
+    opacity 0
+  to
+    opacity 1
+
+@keyframes fadeIn
+  from
+    opacity 0
+  to
+    opacity 1
+
+@-webkit-keyframes fadeOut
+  from
+    opacity 1
+  to
+    opacity 0
+
+@keyframes fadeOut
+  from
+    opacity 1
+  to
+    opacity 0
+
+.animated
+  -webkit-animation-duration 0.6s
+  animation-duration 0.6s
+  -webkit-animation-fill-mode both
+  animation-fill-mode both
+
+.fadeIn
+  -webkit-animation-name fadeIn
+    animation-name fadeIn
+
+.fadeOut
+  -webkit-animation-name fadeOut
+  animation-name fadeOut
+
+@-webkit-keyframes slideInUp
+  from
+    -webkit-transform translate3d(0, 100%, 0)
+    transform translate3d(0, 100%, 0)
+    visibility visible
+  to
+    -webkit-transform translate3d(0, 0, 0)
+    transform translate3d(0, 0, 0)
+
+@keyframes slideInUp
+  from
+    -webkit-transform translate3d(0, 100%, 0)
+    transform translate3d(0, 100%, 0)
+    visibility visible
+  to
+    -webkit-transform translate3d(0, 0, 0)
+    transform translate3d(0, 0, 0)
+
+@-webkit-keyframes slideOutDown
+  from
+    -webkit-transform translate3d(0, 0, 0)
+    transform translate3d(0, 0, 0)
+  to
+    visibility hidden
+    -webkit-transform translate3d(0, 100%, 0)
+    transform translate3d(0, 100%, 0)
+
+@keyframes slideOutDown
+  from
+    -webkit-transform translate3d(0, 0, 0)
+    transform translate3d(0, 0, 0)
+  to
+    visibility hidden
+    -webkit-transform translate3d(0, 100%, 0)
+    transform translate3d(0, 100%, 0)
+
+.slideOutDown
+  -webkit-animation-name slideOutDown
+  animation-name slideOutDown
+
+.slideInUp
+  -webkit-animation-name slideInUp
+  animation-name slideInUp
+
+.action-sheet
+  z-index 2147483647
+  .action-sheet-mask
+    position: fixed;
+    left 0
+    top 0
+    right 0
+    bottom 0
+    background: rgba(0, 0, 0, .1)
+  .action-sheet-wrapper
+    position fixed
+    left 0
+    right 0
+    bottom 0
+    padding 0 8px 22px
+    & > div
+      display table
+      width 100%
+      text-align center
+      height 50px
+      background: #fff
+      border-top 1px solid #F0F0F0
+      user-select: none
+      &.title
+        border-top none
+        height 40px
+        & > span
+          height 40px
+          font-size 13px
+          color #8C8D8E
+          font-weight 400
+      &:first-of-type
+        border-top-left-radius 10px
+        border-top-right-radius 10px
+      &.last
+        border-bottom-left-radius 10px
+        border-bottom-right-radius 10px
+      &.cancel
+        margin-top 8px
+        border-radius 10px
+        border-top none
+        & > span
+          color #8C8D8E
+      & > span
+        display table-cell
+        height 50px
+        font-size 18px
+        vertical-align middle
+        user-select: none

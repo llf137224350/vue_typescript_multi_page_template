@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>app</title>
+  <style>
+    .animated {
+      -webkit-animation-duration: .4s !important;
+      animation-duration: .4s !important;
+    }
+  </style>
+</head>
+<body>
+<div id="app"></div>
+<%= htmlWebpackPlugin.options.cdn %>
+<script>
+  function loaded() {
+    window.ip = returnCitySN.cip;
+  }
+  window.onload = loaded();
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+// 字体渐变$direction 方向  $startColr 开始颜色 $endColor 结束颜色
+gradualChange($direction, $startColor, $endColor)
+  background: linear-gradient(to $direction, $startColor, $endColor);
+  -webkit-background-clip: text;
+  color: transparent;
+
+// 居中
+center()
+  display flex
+  align-items center
+  justify-content center
+
+// 文字居中
+textCenter($height, $fontSize, $fontWeight)
+  display flex
+  align-items center
+  justify-content center
+  height $height
+  font-size $fontSize
+  font-weight $fontWeight
