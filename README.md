@@ -37,6 +37,9 @@ npm run test
 
 7、git commit增加了tslint检查，如果检查通不过，则不允许提交到git
 
+8、加载动画、吐司/带图标吐司、ActionSheet、车牌输入键盘控件等，前三个为全局函数调用方式，如：
+this.$toast({text: '我是提示消息'})
+
 ```
 
 ### 项目效果及使用方法
