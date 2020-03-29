@@ -40,8 +40,34 @@ npm run test
 8、加载动画、吐司/带图标吐司、ActionSheet、车牌输入键盘控件等，前三个为全局函数调用方式，如：
 this.$toast({text: '我是提示消息'})
 
+9、px自动转为rem，为不同设备进行屏幕适配
+
 ```
 
+### 注：搭建项目的出发点主要针对移动web应用，若用于pc项目，适配方案需要做一下小调整，调整地方包括
+
+```
+vue.config.js文件中
+const postcss = px2rem({
+  remUnit: 37.5, // 设计图iphone 678 = 750 / 20
+  remPrecision: 10
+});
+
+src/common/js/init.ts
+
+const setRootFontSize = () => {
+      // 进行rem适配 设置根元素字体大小
+      const width = document.documentElement.clientWidth || document.body.clientWidth;
+      const htmlDom = document.getElementsByTagName('html')[0];
+      htmlDom.style.fontSize = width / 10 + 'px';
+    };
+    // 设置适配
+    setRootFontSize();
+    // 屏幕大小改变后，重新进行设置根字体大小
+    window.onresize = () => {
+      setRootFontSize();
+};
+```
 ### 项目效果及使用方法
 
 <img src='./screenshot/01.jpg'/></b>
