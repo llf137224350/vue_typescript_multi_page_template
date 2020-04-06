@@ -68,6 +68,56 @@ const setRootFontSize = () => {
       setRootFontSize();
 };
 ```
+### new VueRouter({ routes, mode: 'history' }) mode=hash或者mode=history的一些注意点
+1、hash模式下访问方式为：
+  >http://localhost:8081/demo01/index.html#/demo
+
+  >http://localhost:8081/demo02/index.html#/demo02
+
+2、history模式下访问方式为：
+  >http://localhost:8081/demo01/demo
+
+3、history模式配置参考：
+```
+  路由：
+
+    {
+      path: '/demo01/demo',
+      name: 'demo',
+      component: demo组件
+    }
+
+  代理：
+
+    devServer: {
+      host: '0.0.0.0', // host: 'localhost',
+      // https: false, // https:{type:Boolean}
+      open: false, // 配置自动启动浏览器
+      hotOnly: true, // 热更新
+      port: 8081,
+      historyApiFallback: {
+        rewrites: (() => { // 自动处理单页应用
+          const arr = [];
+          config.buildEntries.map((name) => {
+            arr.push({
+              from: new RegExp(`\/${name}\/.*$`), to: `/${name}/index.html`
+            });
+          });
+          return arr;
+        })()
+      },
+      proxy: {
+        '/api': {
+          target: 'http://www.baidu.com', 
+          changeOrigin: true,
+          pathRewrite: {}
+        }
+      }
+   }
+  ```
+
+
+
 ### 项目效果及使用方法
 
 <img src='./screenshot/01.jpg'/></b>
